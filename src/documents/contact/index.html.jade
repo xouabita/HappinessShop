@@ -1,10 +1,38 @@
 ---
-title: "Products"
+title: "Contact"
 layout: "default"
 isPage: true
 ---
 
-h1 Checkout
-hr
+mixin human(img,name)
+  .human
+    .name= name
+    .thumbnail
+      img(src='../imgs/humans/'+img)
+    a(href='#')
+      .social.twitter Twitter
+    a(href='#')
+      .social.facebook Facebook
+    a(href='#')
+      .social.google Google +
 
-form.minimalistic
+
+h1 Contact Us
+hr
+.contact
+  h2 The Team
+  .team
+    +human('1.jpg', 'Raiponce')
+    +human('2.jpg', 'xouabita')
+    +human('3.jpg', 'Chomsky')
+
+  h2 Leave us a message
+  .msg_box
+    form.minimalistic
+      label(for="name") Name
+      input(id="name", type="text", placeholder="NAME")
+      label(for="email") E-Mail
+      input(id="email", type="text", placeholder="E-MAIL")
+      label(for="message")
+      textarea(id="message", type="text", placeholder="MESSAGE").last
+      input(id="submit", type="submit", value="SEND")

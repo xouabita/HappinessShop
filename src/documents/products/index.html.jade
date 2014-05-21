@@ -6,17 +6,6 @@ isPage: true
 
 - var root_url = ".."
 
-mixin product(img, name, price)
-  li.prod
-      .preview
-        .short_description
-          .name= name
-          .price= price
-        .thumbnail
-          span.helper
-          img(src=img, alt=name)
-      a(href='#')
-        .interact Add to Cart
 h1 Products
 hr
 #prods

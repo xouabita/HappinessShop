@@ -24,11 +24,13 @@ child-color(color)
 
 // Variables
 
-breakpoint = 750px
+breakpoint = 860px
 
 *
   margin 0
   padding 0
+  &:focus
+    outline 0
 
 a
   text-decoration none
@@ -362,7 +364,7 @@ html
   color #223f65
   label
     display none
-  input
+  input, textarea
     font-family 'Lato'
     font-size 0.875em
     width 100%
@@ -379,6 +381,10 @@ html
     &:hover
       background #223f65
       color #fef1dc
+  textarea
+    max-width 100%
+    padding 15px
+    height 150px
   .last
     border-bottom solid 2px #223f65
     margin-bottom 5px
@@ -388,3 +394,115 @@ html
     &:hover
       background #a2e76b
       color #fef1dc
+.contact
+  margin-bottom 3vw
+.team
+  .human
+    background rgba(255,255,255,0.5)
+    margin-bottom 20px
+    col(1/3, cycle:3)
+    +below(700px)
+      stack()
+    .thumbnail
+      padding 10%
+      padding-bottom 2%
+      img
+        width 100%
+        height auto
+        border-radius 50%
+        border 3px solid #223f65
+    .name
+      text-align center
+      font-family 'Lato'
+      padding 10px
+      font-size 2.3vw
+      +below(700px)
+        font-size 6vw
+      color #223f65
+      background rgba(255,255,255,0.8)
+
+    a
+      .social
+        text-align center
+        margin auto 5%
+        padding 10px
+        font-size 2.3vw
+        +below(700px)
+          font-size 5vw
+        font-family "Lato"
+        transition background ease-in-out 300ms
+        color white
+      .facebook
+        background #3B5998
+      .twitter
+        background #4099FF
+      .google
+        background #dd4b39
+        margin-bottom 20px
+      &:hover
+        .facebook
+          background darken(#3B5998, 20%)
+        .twitter
+          background darken(#4099FF, 20%)
+        .google
+          background darken(#dd4b39, 20%)
+.faq
+  margin-top 3vw
+  .row
+    .quest, .res
+      margin 1vw auto
+      +below(650px)
+        padding 2vw
+    .quest
+      col(2/7)
+      color #223f65
+      font-family "Maven Pro"
+      font-size 22px
+      +below(650px)
+        stack()
+    .res
+      col(5/7)
+      color #223f65
+      font-family "sans-serif"
+      font-size 16px
+      +below(650px)
+        stack()
+
+.search
+  .search_bar
+    label
+      display none
+    input
+      span(17/20)
+      background rgba(255,255,255,0.75)
+      padding-left 2vw
+      color #223f65
+    button
+      span(3/20)
+      text-align center
+      background darken(#a2e76b,10%)
+      color white
+    input, button
+      box-sizing border-box
+      height 40px
+      font-family "Lato"
+      font-size 20px
+      border solid 0 transparent
+      margin-bottom 20px
+  h2
+    font-size 30px
+
+  .queries
+    .query
+      stack()
+      height 10vw
+      .thumbnail
+        span(3/8)
+        height 100%
+        width auto
+      .name
+        span(2/8)
+      .price
+        span(1/8)
+      a
+        span(2/8)
