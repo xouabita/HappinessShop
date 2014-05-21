@@ -247,6 +247,7 @@ html
         color #523118
         .name
           font-size 25px
+          color #523118
         .price
           font-size 17px
     a
@@ -321,7 +322,7 @@ html
       background transparent
       border 0 solid transparent
 
-.check
+.check, .success
   h2
     text-align center
   .total
@@ -335,23 +336,27 @@ html
       font-family "Mouse Memoirs"
       font-size 20px
       display inline-block
+  .cart
+    margin-bottom 30px
+    .item
+      .qty
+        span(1/4)
+      .name
+        span(2/4)
+      .price
+        span(1/4)
+      .qty, .name, .price
+        text-align center
+.success
+  .total
+    margin-bottom 40px
+.check
   .items
     col(1/2)
     shift(1/2)
     +below(700px)
       unshift()
       stack()
-    .cart
-      margin-bottom 30px
-      .item
-        .qty
-          span(1/4)
-        .name
-          span(2/4)
-        .price
-          span(1/4)
-        .qty, .name, .price
-          text-align center
   .formular
     col(1/2)
     shift(-1/2)
@@ -506,3 +511,8 @@ html
         span(1/8)
       a
         span(2/8)
+
+.short_prez
+  text-align center
+.long_prez
+  margin-bottom 60px

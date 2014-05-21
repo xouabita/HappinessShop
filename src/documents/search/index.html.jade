@@ -8,7 +8,7 @@ mixin product(img, name, price)
   li.prod
       .preview
         .short_description
-          .name= name
+          a(href='../product/').name= name
           .price= price
         .thumbnail
           span.helper

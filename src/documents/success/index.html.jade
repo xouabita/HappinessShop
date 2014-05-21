@@ -1,0 +1,30 @@
+---
+title: "Success"
+layout: "default"
+isPage: true
+---
+
+mixin item(qty, name, price)
+  .item
+    .qty= qty
+    .name= name
+    .price= price
+
+.success
+  h1 Thanks You !
+  .items
+    .cart
+      .item.top
+        .qty QTY
+        .name ITEM
+        .price PRICE
+      +item('1',"Cat", "$ 80.00")
+      +item('3',"Donuts", "$ 11.70")
+      +item('10',"Candies", "$ 21.0")
+      +item('1',"Lemon Pie", "$ 9.90")
+    .total
+      h3.tot Total:
+      span.price $ 122.60
+.btns
+  a(href='../products/') Continue Shopping
+  a(href='../') Return Home
