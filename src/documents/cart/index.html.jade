@@ -1,0 +1,29 @@
+---
+title: "Cart"
+layout: "default"
+isPage: true
+---
+
+h1 Cart
+hr
+
+mixin item(qty, name, price)
+  .item
+    .qty= qty
+    .name= name
+    .price= price
+    a(href='#').remove Delete
+.cart
+  .item.top
+    .qty QTY
+    .name ITEM
+    .price PRICE
+    .remove
+  +item('1',"Cat", "$ 80.00")
+  +item('3',"Donuts", "$ 11.70")
+  +item('10',"Candies", "$ 21.0")
+  +item('1',"Lemon Pie", "$ 9.90")
+
+.btns.cart_btns
+  a.green(href='../checkout/') Checkout
+  a(href='../products') Continue Shopping

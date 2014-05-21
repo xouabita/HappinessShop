@@ -1,0 +1,390 @@
+@import 'jeet'
+@import url(http://fonts.googleapis.com/css?family=Dancing\+Script)
+@import url(http://fonts.googleapis.com/css?family=Raleway:800)
+@import url(http://fonts.googleapis.com/css?family=Maven\+Pro)
+@import url(http://fonts.googleapis.com/css?family=Mouse\+Memoirs:400,700)
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400)
+
+// edit()
+
+// Mixins
+
+child-color(color)
+  .preview
+    background color
+  a
+    .interact
+      border solid 2px darken(color, 20%)
+      color darken(color, 20%)
+      background lighten(color, 50%)
+    &:hover
+      .interact
+        background darken(color, 20%)
+        color lighten(color, 50%)
+
+// Variables
+
+breakpoint = 750px
+
+*
+  margin 0
+  padding 0
+
+a
+  text-decoration none
+
+html
+  background-color #fef1dc
+  @media print
+    background-color none
+.header
+  position fixed
+  z-index 10
+  top 0
+  padding 8px
+  background-color #59b9c8
+  height 40px
+  width 100%
+  @media print
+    background-color none
+    position static
+  .title
+    display inline-block
+    float left
+    @media print
+      display block
+      float none
+    h1
+      font-family "Dancing Script"
+      color #223f65
+      @media print
+        text-align center
+  .menu
+    display inline-block
+    float right
+    margin-right 15px
+    @media print
+      display none
+      float none
+    ul
+      list-style none
+      li
+        display inline-block
+        margin 5px
+        a, .selection
+          color #223f65
+          font-family "Raleway"
+          font-size 25px
+          padding-bottom 9px
+          &:hover
+            border-bottom solid 4px #223f65
+            transition 300ms ease-in-out
+        .selection
+          border-bottom solid 4px #223f65
+    +below(breakpoint)
+      display none
+
+  .icon_menu
+    float right
+    margin-right 20px
+    button
+      font-size 30px
+      padding 0 15px
+      border solid 2px #223f65
+      border-radius 3px
+      color #223f65
+      background-color #9fd7df
+      cursor pointer
+    +from(breakpoint)
+      display none
+    @media print
+      float none
+      margin 0
+      display none
+
+
+#mobile_menu
+  background-color #9fd7df
+  transition 1s ease-in
+  position fixed
+  top 56px
+  width 100%
+  z-index 100
+  ul
+    list-style none
+    li
+      border-bottom solid 2px #223f65
+      padding 5px
+      a
+        color #223f65
+        font-family "Raleway"
+        font-size 25px
+  +from(breakpoint)
+    display none
+
+.hidden
+  transition 1s ease-in
+  display none
+
+.content
+  margin-top 56px
+  z-index 1
+  center(1100px)
+  #prz
+    height auto
+    margin-top 5%
+    h1
+      font-family "Dancing Script"
+      font-size 100px
+      +below(1000px)
+        font-size 75px
+      padding 3%
+      color #223f65
+    h2
+      font-family "Raleway"
+      text-align center
+      font-size 50px
+      +below(1000px)
+        font-size 40px
+      margin-bottom 5%
+      color #6b115c
+  .btns
+    text-align center
+    margin-bottom 50px
+    a
+      color #223f65
+      border solid 3px #223f65
+      padding 15px 20px
+      margin 50px 25px
+      font-size 30px
+      font-family "Maven Pro"
+      transition background ease-in-out 300ms
+      +below(1000px)
+        margin-top 100px
+      &:hover
+        background-color #223f65
+        color white
+    a.green
+      color #a2e76b
+      border solid 3px #a2e76b
+      &:hover
+        background #a2e76b
+        color white
+  .btns
+    a
+      +below(600px)
+        display block
+        margin 20px 20px
+.content
+  center(1100px, 10px)
+  +below(900px)
+    center(750px, 10px)
+  h1
+    font-family "Dancing Script"
+    text-align center
+    padding 10px
+    font-size 60px
+    color #223f65
+  hr
+    border: 0;
+    border-top: 5px solid #223f65;
+    border-bottom: 2px solid #223f65;
+    padding: 5px 0;
+  h2
+    margin-top 20px
+    margin-bottom 20px
+    font-size 40px
+    font-family "Mouse Memoirs"
+    color #223f65
+    @media print
+      margin-top 5px
+      font-size 30px
+  p
+    margin-top 20px
+    margin-bottom 20px
+    font-size 20px
+    color #223f65
+  .products
+    margin-top 20px
+  .prod
+    &:nth-child(3n+1)
+      child-color #E8B0AF
+    &:nth-child(3n+2)
+      child-color #FDDAC4
+    &:nth-child(3n)
+      child-color #F1D5A5
+    &:nth-child(5n+4)
+      child-color #e3f4bb
+    &:nth-child(5n)
+      child-color #d0f3b4
+    .preview
+      .thumbnail
+        width 100%
+        height 300px
+        text-align center
+        +below(900px)
+          height 400px
+        +below(600px)
+          height 300px
+        +below(500px)
+          height 500px
+        +below(400px)
+          height 400px
+        .helper
+          display inline-block
+          height 100%
+          vertical-align middle
+        img
+          width 90%
+          vertical-align middle
+      .short_description
+        background rgba(255,255,255,0.5)
+        font-family "Mouse Memoirs"
+        text-align center
+        padding 5px
+        color #523118
+        .name
+          font-size 25px
+        .price
+          font-size 17px
+    a
+      .interact
+        text-align center
+        padding 10px
+        font-size 20px
+        font-family "Maven Pro"
+        transition background ease-in-out 300ms
+    margin-bottom 20px
+    col(1/4, cycle: 4)
+    +below(900px)
+      col(1/2, uncycle: 3, cycle: 2)
+    +below(500px)
+      stack()
+
+.cart
+  margin-top 30px
+  margin-bottom 100px
+  +below(600px)
+    margin-bottom 50px
+  color #223f65
+  .item
+    stack()
+    height 3em
+    border-bottom solid 1px #223f65
+    &:nth-child(2n+1)
+      background #E8B0AF
+    &:nth-child(2n)
+      background #FDDAC4
+    .qty
+      span(1/8)
+      background rgba(127,127,127,0.1)
+      font-family "Mouse Memoirs"
+    .name
+      span(4/8)
+      font-family "Dancing Script"
+      +below(800px)
+        span(3/8)
+    .price
+      background rgba(255,255,255,0.3)
+      font-family "Mouse Memoirs"
+      span(2/8)
+    .remove
+      span(1/8)
+      color #b83d41
+      font-family "Maven Pro"
+      background rgba(255,255,255,0.6)
+      transition background ease-in-out 300ms
+      &:hover
+        background #b83d41
+        color white
+      +below(800px)
+        span(2/8)
+    .qty, .name, .price, .edit, .remove
+      text-align center
+      line-height 2em
+      font-size 1.5em
+  .top
+    height 1.2em
+    padding-bottom 5px
+    border-bottom solid 2px #223f65
+    margin-bottom 0
+    font-size 1.2em
+    &:nth-child(2n+1)
+      background transparent
+    .qty, .name, .price, .edit, .remove
+      font-family "Mouse Memoirs"
+      font-size 1.2em
+      line-height 1.2em
+      text-align center
+      background transparent
+      border 0 solid transparent
+
+.check
+  h2
+    text-align center
+  .total
+    color #223f65
+    .tot
+      font-family "Dancing Script"
+      font-size 30px
+      display inline-block
+      margin-right 30px
+    .price
+      font-family "Mouse Memoirs"
+      font-size 20px
+      display inline-block
+  .items
+    col(1/2)
+    shift(1/2)
+    +below(700px)
+      unshift()
+      stack()
+    .cart
+      margin-bottom 30px
+      .item
+        .qty
+          span(1/4)
+        .name
+          span(2/4)
+        .price
+          span(1/4)
+        .qty, .name, .price
+          text-align center
+  .formular
+    col(1/2)
+    shift(-1/2)
+    +below(700px)
+      unshift()
+      stack()
+      margin-bottom 30px
+.minimalistic
+  font-family 'Lato'
+  color #223f65
+  label
+    display none
+  input
+    font-family 'Lato'
+    font-size 0.875em
+    width 100%
+    height 50px
+    padding 0 15px 0 15px
+    box-sizing border-box
+    background transparent
+    outline none
+    color #223f65
+
+    border solid 2px #223f65
+    border-bottom none
+    transition background 0.3s ease-in-out
+    &:hover
+      background #223f65
+      color #fef1dc
+  .last
+    border-bottom solid 2px #223f65
+    margin-bottom 5px
+  #submit
+    color #a2e76b
+    border solid 2px #a2e76b
+    &:hover
+      background #a2e76b
+      color #fef1dc

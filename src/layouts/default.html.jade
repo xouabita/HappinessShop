@@ -1,0 +1,53 @@
+- var styles  = getBlock('styles')
+- var scripts = getBlock('scripts')
+
+if document.title == "Home"
+  - var root_url = '.'
+else
+  - var root_url = '..'
+
+- var style_url = root_url + '/styles/style.css'
+- var ionicons_url = root_url + '/styles/ionicons.css'
+
+- styles.add([style_url])
+- styles.add([ionicons_url])
+
+- var script_html = '<script type="text/javascript" src="'+root_url+'/scripts/app.js"></script>'
+
+- scripts.push(script_html)
+
+- var pages = [ { name: "Home", uri: '/' }, { name: "Products", uri: '/products/' }, { name: "About", uri: '/about/' }, { name: "Cart", uri: '/cart/' } ]
+
+doctype 1.1
+html(lang="en")
+  head
+    title Happiness Shop
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    != styles.toHTML()
+    != scripts.toHTML()
+  body
+    .header
+      .title
+        if document.title == "Home"
+          h1 Happiness Shop
+        else
+          a(href=root_url): h1 Happiness Shop
+      .menu
+        ul
+          each page in pages
+            if page.name == document.title
+              li
+                .selection= page.name
+            else
+              li: a(href=root_url + page.uri)
+                = page.name
+      .icon_menu
+        button#open_menu(class="ion ion-navicon")
+    #mobile_menu.hidden
+      ul
+        each page in pages
+          li: a(href=root_url+page.uri)
+            = page.name
+    .content
+      != content
+
