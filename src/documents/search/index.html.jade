@@ -4,6 +4,18 @@ layout: "default"
 isPage: true
 ---
 
+mixin product(img, name, price)
+  li.prod
+      .preview
+        .short_description
+          .name= name
+          .price= price
+        .thumbnail
+          span.helper
+          img(src="../imgs/prods/" + img, alt=name)
+      a(href='#')
+        .interact Add to Cart
+
 h1 Search
 hr
 .search

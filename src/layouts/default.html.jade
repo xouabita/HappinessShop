@@ -18,18 +18,6 @@ else
 
 - var pages = [ { name: "Home", uri: '/' }, { name: "Products", uri: '/products/' }, { name: "Search", uri: '/search/'}, { name: "About", uri: '/about/' }, { name: "Cart", uri: '/cart/' }, { name: "Contact", uri: '/contact/' }, { name: "FAQ", uri: '/faq/' } ]
 
-mixin product(img, name, price)
-  li.prod
-      .preview
-        .short_description
-          .name= name
-          .price= price
-        .thumbnail
-          span.helper
-          img(src="../imgs/prods/" + img, alt=name)
-      a(href='#')
-        .interact Add to Cart
-
 doctype 1.1
 html(lang="en")
   head

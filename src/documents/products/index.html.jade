@@ -4,21 +4,31 @@ layout: "default"
 isPage: true
 ---
 
-- var root_url = ".."
+mixin product(img, name, price)
+  li.prod
+      .preview
+        .short_description
+          .name= name
+          .price= price
+        .thumbnail
+          span.helper
+          img(src="../imgs/prods/" + img, alt=name)
+      a(href='#')
+        .interact Add to Cart
 
 h1 Products
 hr
 #prods
   ul.products
-    +product(root_url + "/imgs/prods/cupcake.png", "Cupcake", "$ 4.90")
-    +product(root_url + "/imgs/prods/coffee_cup.png", "Coffee", "$ 3.50")
-    +product(root_url + "/imgs/prods/waffle.png", "Waffle", "$ 6.90")
-    +product(root_url + "/imgs/prods/choco.png", "Chocolate", "$ 5.70")
-    +product(root_url + "/imgs/prods/donuts.jpg", "Donuts", "$ 3.90")
-    +product(root_url + "/imgs/prods/sorbet.gif", "Sorbet", "$ 6.50")
-    +product(root_url + "/imgs/prods/croissant.png", "Croissant", "$ 1.80")
-    +product(root_url + "/imgs/prods/macaron.png", "Macaron", "$ 2.50")
-    +product(root_url + "/imgs/prods/mille.jpg", "Mille-feuille", "$ 12.90")
-    +product(root_url + "/imgs/prods/lemon.jpg", "Lemon Pie", "$ 9.90")
-    +product(root_url + "/imgs/prods/candies.png", "Candies", "$ 2.10")
-    +product(root_url + "/imgs/prods/cat.png", "Cat", "$ 80.00")
+    +product("cupcake.png", "Cupcake", "$ 4.90")
+    +product("coffee_cup.png", "Coffee", "$ 3.50")
+    +product("waffle.png", "Waffle", "$ 6.90")
+    +product("choco.png", "Chocolate", "$ 5.70")
+    +product("donuts.jpg", "Donuts", "$ 3.90")
+    +product("sorbet.gif", "Sorbet", "$ 6.50")
+    +product("croissant.png", "Croissant", "$ 1.80")
+    +product("macaron.png", "Macaron", "$ 2.50")
+    +product("mille.jpg", "Mille-feuille", "$ 12.90")
+    +product("lemon.jpg", "Lemon Pie", "$ 9.90")
+    +product("candies.png", "Candies", "$ 2.10")
+    +product("cat.png", "Cat", "$ 80.00")
