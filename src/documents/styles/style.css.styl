@@ -14,16 +14,12 @@ child-color(color)
     background color
   .interact
     border solid 2px darken(color, 20%)
-    a
-      color darken(color, 20%)
-      display block
-      height 100%
-      width 100%
+    color darken(color, 20%)
+    display block
     background lighten(color, 50%)
     &:hover
       background darken(color, 20%)
-      a
-        color lighten(color, 50%)
+      color lighten(color, 50%)
 
 // Variables
 
@@ -483,6 +479,8 @@ html
 
 .search
   .search_bar
+    margin-top 3vw
+    margin-bottom 3vw
     label
       display none
     input
@@ -501,7 +499,6 @@ html
       font-family "Lato"
       font-size 20px
       border solid 0 transparent
-      margin-bottom 20px
   h2
     font-size 30px
 
