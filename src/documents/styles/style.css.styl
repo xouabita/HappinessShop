@@ -114,7 +114,7 @@ html
 
 #mobile_menu
   background-color #9fd7df
-  transition 1s ease-in
+  transition all 1s ease-in
   position fixed
   top 56px
   width 100%
@@ -127,7 +127,7 @@ html
       a
         color #223f65
         font-family "Raleway"
-        font-size 25px
+        font-size 7.9vh
   +from(breakpoint)
     display none
 
@@ -435,32 +435,30 @@ html
         font-size 6vw
       color #223f65
       background rgba(255,255,255,0.8)
-
-    a
-      .social
-        text-align center
-        margin auto 5%
-        padding 10px
-        font-size 2.3vw
-        +below(700px)
-          font-size 5vw
-        font-family "Lato"
-        transition background ease-in-out 300ms
-        color white
-      .facebook
-        background #3B5998
-      .twitter
-        background #4099FF
-      .google
-        background #dd4b39
-        margin-bottom 20px
+    .social
+      text-align center
+      display block
+      margin auto 5%
+      padding 10px
+      font-size 2.3vw
+      +below(700px)
+        font-size 5vw
+      font-family "Lato"
+      transition background ease-in-out 300ms
+      color white
+    .facebook
+      background #3B5998
       &:hover
-        .facebook
-          background darken(#3B5998, 20%)
-        .twitter
-          background darken(#4099FF, 20%)
-        .google
-          background darken(#dd4b39, 20%)
+        background darken(#3B5998, 20%)
+    .twitter
+      background #4099FF
+      &:hover
+        background darken(#4099FF, 20%)
+    .google
+      background #dd4b39
+      margin-bottom 20px
+      &:hover
+        background darken(#dd4b39, 20%)
 .faq
   margin-top 3vw
   .row
