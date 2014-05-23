@@ -8,12 +8,12 @@ mixin product(img, name, price)
   li.prod
       .preview
         .short_description
-          a(href='../product/').name= name
+          a(href='../product/', title="Want to know more about this product ?").name= name
           .price= price
         .thumbnail
           span.helper
           img(src="../imgs/prods/" + img, alt=name)
-      a(href='../cart').interact Add to Cart
+      a(href='../cart', title="You will not regret").interact Add to Cart
 
 h1 Search
 hr

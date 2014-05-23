@@ -9,9 +9,9 @@ mixin human(img,name)
     .name= name
     .thumbnail
       img(src='../imgs/humans/'+img, alt=name)
-    a(href='#').social.twitter Twitter
-    a(href='#').social.facebook Facebook
-    a(href='#').social.google Google +
+    a(href='#', title="Twitter account").social.twitter Twitter
+    a(href='#', title="Facebook account").social.facebook Facebook
+    a(href='#', title="Who use it ?").social.google Google +
 
 
 h1 Contact Us

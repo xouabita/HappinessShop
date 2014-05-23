@@ -16,15 +16,16 @@ else
 
 - scripts.push(script_html)
 
-- var pages = [ { name: "Home", uri: '/' }, { name: "Products", uri: '/products/' }, { name: "Search", uri: '/search/'}, { name: "About", uri: '/about/' }, { name: "Cart", uri: '/cart/' }, { name: "Contact", uri: '/contact/' }, { name: "FAQ", uri: '/faq/' } ]
+- var pages = [ { name: "Home", uri: '/', title: "Return home" }, { name: "Products", uri: '/products/', title: "Go to product" }, { name: "Search", uri: '/search/', title: "Search something"}, { name: "About", uri: '/about/', title: "About Us" }, { name: "Cart", uri: '/cart/', title: "See your cart" }, { name: "Contact", uri: '/contact/', title: "About Us" }, { name: "FAQ", uri: '/faq/', title: "Frequently asked questions" } ]
 
-doctype xml
-doctype 1.1
-html(lang="en", xmlns="http://www.w3.org/1999/xhtml")
+doctype strict
+html(xmlns="http://www.w3.org/1999/xhtml", xml:lang="en", lang="en")
   head
     title Happiness Shop
     meta(http-equiv="Content-Type", content="text/html;charset=utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    meta(name="description", content="Shop for buy delicious food and one cat")
+    meta(name="keywords", content="cake,cat,candy,sorbet")
     != styles.toHTML()
     != scripts.toHTML()
   body
@@ -33,7 +34,7 @@ html(lang="en", xmlns="http://www.w3.org/1999/xhtml")
         if document.title == "Home"
           h1 Happiness Shop
         else
-          h1: a(href=root_url) Happiness Shop
+          h1: a(href=root_url, title="Return Home") Happiness Shop
       .menu
         ul
           each page in pages
@@ -41,14 +42,14 @@ html(lang="en", xmlns="http://www.w3.org/1999/xhtml")
               li
                 .selection= page.name
             else
-              li: a(href=root_url + page.uri)
+              li: a(href=root_url + page.uri, title=page.title)
                 = page.name
       .icon_menu
         button#open_menu(class="ion ion-navicon")
     #mobile_menu.hidden
       ul
         each page in pages
-          li: a(href=root_url+page.uri)
+          li: a(href=root_url+page.uri, title=page.title)
             = page.name
     .content
       != content

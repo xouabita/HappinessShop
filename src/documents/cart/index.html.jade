@@ -12,7 +12,7 @@ mixin item(qty, name, price)
     .qty= qty
     .name= name
     .price= price
-    a(href='#').remove Delete
+    a(href='#', title="Please... Don't kill me !!!").remove Delete
 .cart
   .item.top
     .qty QTY
@@ -25,5 +25,5 @@ mixin item(qty, name, price)
   +item('1',"Lemon Pie", "$ 9.90")
 
 .btns.cart_btns
-  a.green(href='../checkout/') Checkout
-  a(href='../products') Continue Shopping
+  a.green(href='../checkout/', title="I am too hungry !!!") Checkout
+  a(href='../products', title="I want moaaaar !!") Continue Shopping
