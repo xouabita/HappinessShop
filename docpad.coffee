@@ -6,8 +6,11 @@ docpadConfig = {
   plugins:
     stylus:
       stylusLibraries:
+        'nib': true
         'jeet': true
         'rupture': true
+      stylusOptions:
+        compress: false
 }
 
 # Export the DocPad Configuration
