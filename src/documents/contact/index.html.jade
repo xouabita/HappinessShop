@@ -9,12 +9,9 @@ mixin human(img,name)
     .name= name
     .thumbnail
       img(src='../imgs/humans/'+img, alt=name)
-    a(href='#')
-      .social.twitter Twitter
-    a(href='#')
-      .social.facebook Facebook
-    a(href='#')
-      .social.google Google +
+    a(href='#').social.twitter Twitter
+    a(href='#').social.facebook Facebook
+    a(href='#').social.google Google +
 
 
 h1 Contact Us
@@ -28,11 +25,12 @@ hr
 
   h2 Leave us a message
   .msg_box
-    form.minimalistic
-      label(for="name") Name
-      input(id="name", type="text", placeholder="NAME")
-      label(for="email") E-Mail
-      input(id="email", type="text", placeholder="E-MAIL")
-      label(for="message")
-      textarea(id="message", type="text", placeholder="MESSAGE").last
-      input(id="submit", type="submit", value="SEND")
+    form(action='#').minimalistic
+      fieldset
+        label(for="name").placeholder Name
+        input(id="name", type="text")
+        label(for="email").placeholder E-Mail
+        input(id="email", type="text")
+        label(for="message").placeholder Message
+        textarea(id="message", rows='2', cols='2').last
+        input(id="submit", type="submit", value="SEND")

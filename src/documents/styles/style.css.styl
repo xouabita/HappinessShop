@@ -12,14 +12,17 @@
 child-color(color)
   .preview
     background color
-  a
-    .interact
-      border solid 2px darken(color, 20%)
+  .interact
+    border solid 2px darken(color, 20%)
+    a
       color darken(color, 20%)
-      background lighten(color, 50%)
+      display block
+      height 100%
+      width 100%
+    background lighten(color, 50%)
     &:hover
-      .interact
-        background darken(color, 20%)
+      background darken(color, 20%)
+      a
         color lighten(color, 50%)
 
 // Variables
@@ -32,6 +35,8 @@ breakpoint = 860px
   &:focus
     outline 0
 
+fieldset
+  border solid 0 transparent
 a
   text-decoration none
 
@@ -59,6 +64,8 @@ html
     h1
       font-family "Dancing Script"
       color #223f65
+      a
+        color #223f65
       @media print
         text-align center
   .menu
@@ -248,13 +255,12 @@ html
           color #523118
         .price
           font-size 17px
-    a
-      .interact
-        text-align center
-        padding 10px
-        font-size 20px
-        font-family "Maven Pro"
-        transition background ease-in-out 300ms
+    .interact
+      text-align center
+      padding 10px
+      font-size 20px
+      font-family "Maven Pro"
+      transition background ease-in-out 300ms
     margin-bottom 20px
     col(1/4, cycle: 4)
     +below(900px)
@@ -321,7 +327,7 @@ html
       border 0 solid transparent
 
 .check, .success
-  h2
+  h2, h1
     text-align center
   .total
     color #223f65
@@ -364,29 +370,34 @@ html
       margin-bottom 30px
 .minimalistic
   font-family 'Lato'
-  color #223f65
-  label
-    display none
+  .placeholder
+    position absolute
+    display block
+    line-height 50px
+    font-size 0.875em
+    padding-left 20px
+    color #aaa
+    cursor text
   input, textarea
     font-family 'Lato'
     font-size 0.875em
     width 100%
     height 50px
-    padding 0 15px 0 15px
     border-radius 0
+    padding-left 15px
     box-sizing border-box
     background transparent
     outline none
     color #223f65
-
     border solid 2px #223f65
     border-bottom none
     transition background 0.3s ease-in-out
+    z-index 5
     &:hover
       background #223f65
       color #fef1dc
   textarea
-    max-width 100%
+    resize none
     padding 15px
     height 150px
   .last

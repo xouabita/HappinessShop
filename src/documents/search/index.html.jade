@@ -13,18 +13,19 @@ mixin product(img, name, price)
         .thumbnail
           span.helper
           img(src="../imgs/prods/" + img, alt=name)
-      a(href='#')
-        .interact Add to Cart
+      .interact
+        a(href='../cart') Add to Cart
 
 h1 Search
 hr
 .search
   .search_bar
-    label(for='search') Search
-    input(type='text', placeholder='Search a product', value="cake")#search
-    button Go!
+    fieldset
+      label(for='search') Search
+      input(type='text', value="cake")#search
+      button Go!
   h2 3 results for "cake"
-  #prods
+  ul
     +product("cupcake.png", "Cupcake", "$ 4.90")
     +product("mille.jpg", "Mille-Feuille", "$ 12.90")
     +product("lemon.jpg", "Lemon Pie", "$ 9.90")
